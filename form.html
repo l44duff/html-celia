@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+<!--el head aparece en la pestaña-->
+    <title>Formulario</title>
+  </head>
+  <body>
+    <!-- metodo get o post, Post para mandar informacion del cuerpo del mensaje
+    ,codificado por el protocolo HTTP, eso significa que va cifrado, por tanto
+    puedes mandar contraseñas, se envian al back lo recibe un documento u
+    archivo (php, o flash , por ejemplo) siempre tenemos que indicar que archivo
+    lo recibe.
+
+    GET : para mandar informacion en la cabezera del mensaje == en la URL ==
+    lo puede leer todo el mundo. No es apto para contraseñas. Tenemos que
+    indicar que archivo lo recibe (esto se indica con el action)-->
+    <form method = "get" action="procesamiento.php">
+      <!--boton-->
+      <p>
+        <!--el label es para enganchar el input a usuario, necesita un id,
+      es normal que el id tenga lo mismo que name pero esta vez lo cambio -->
+        <label for="idUsuario">
+        Usuario:
+         </label>
+        <input type ="text" name ="usuario" id ="idUsuario" placeholder="Usuario"></br>
+        <!--los input no es necesario cerrarlos aunque
+        sea más correcto-->
+        <!--el name es la variable donde se van a enviar
+      los datos-->
+        <!-- <br> == y esta es la forma que más se utiliza -->
+        <!--<br/><!--esta es la forma mas correcta -->
+        <!--<br></br> == si lo pones uno arriba y otro abajo se forma 2 espacios -->
+        <label for="idContrasena">
+        Contraseña:
+          </label>
+      <!--poniendo password te pone puntos para que no aparezca la contraseña -->
+        <input type ="password" name ="contrasena" id ="idContrasena" placeholder="Contraseña"></br>
+        <label for = "idFechaNac">
+          Fecha de nacimiento:
+        </label>
+        <input type = "date" name = "fechaNac" id="idFechaNac"><br/>
+      </p>
+      <p>Elige tu género:<br/>
+        <!--al tener el nombre con la misma variable solo puedo seleccionar 1
+      en caso de que tega 3 variables distintas puedo seleccionarlas las 3 -->
+        <input type = "radio" name = "genero" value="hombre" id ="idHombre">
+        <label for ="idHombre">Hombre</label><br/>
+        <input type = "radio" name = "genero" value="mujer" id="idMujer">
+        <label for ="idMujer">Mujer</label><br/>
+        <input type = "radio" name = "genero" value="NoBinario" id="idNoBinario">
+        <label for ="idNoBinario">No binario</label><br/>
+      </p>
+      <p>
+        Comida favorita: <br/>
+        <input type ="checkbox" name= "comida[]" value="pan" id ="idPan">
+        <label for="idPan">Pan</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="lasana" id ="idLasana">
+        <label for="idLasana">Lasaña</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="carneS" id ="idCarneS">
+        <label for="idCarneS">Carne en salsa</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="pizza" id ="idPizza">
+        <label for="idPizza">Pizza</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="solomillo" id ="idSolomillo">
+        <label for="idSolomillo">Solomillo salsa Roquefort</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="macarrones" id ="idMacarrones">
+        <label for="idMacarrones">Macarrones</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="migas" id ="idMigas" checked>
+        <!-- el checked te pone la opcion marcada por defecto
+      si pones  el por defecto la gente no lo lee mayoritariamente -->
+        <label for="idMigas">Migas con melón</label><br>
+
+        <input type ="checkbox" name= "comida[]" value="cocretas" id ="idCocretas">
+        <label for="idCocretas">Cocretas</label><br>
+      </p>
+      <p>
+        <!-- manera de hacer un desplegable -->
+        <label for="idComidaFavSelect">Comida favorita</label><br>
+        <select name ="ComidaFavSelect" id ="idComidaFavSelect">
+          <option value="Migas" selected>Migas</option>
+          <option value ="Pizza">Pizza</option>
+        </select>
+      </p>
+      <p>
+        <!-- como el select solo que tu pones tus opciones  -->
+        <label for="idComidaFavSelect">Comida favorita</label><br>
+        <input list="ComidaFavLista" name ="ComidaFavLista"/>
+        <datalist id ="ComidaFavLista"/>
+          <option value="Migas" selected>Migas</option>
+          <option value ="Pizza"/>
+          <!-- no hace falta ya que se guarfa solo -->
+        </datalist>
+      </p>
+      <p><!--parrafo -->
+        <!--tipo boton submit = envio de mensajes de un formulario-->
+        <input type="submit" value="click aquí"></input>
+      </p>
+    </form>
+  </body>
+</html>
+<!-- //el <!DOCTYPE html> para usar el html 5
+//los div dividen en caja
+//metadatos un tipo de datos que definen los caracteres
+//nos da info. sobre nuestro documento
+//tipo documento, ascii y que caracteres podemos utilizar, e indicar que
+//nuestro archivo es un tipo de texto.
+//no es obligatorio indicar que terminan con la barra, pueden ser autoconclusivas
+//que se termina en si mismo - autoconclusivas -->
