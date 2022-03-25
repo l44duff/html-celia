@@ -17,9 +17,17 @@
     GET : para mandar informacion en la cabezera del mensaje == en la URL ==
     lo puede leer todo el mundo. No es apto para contraseñas. Tenemos que
     indicar que archivo lo recibe (esto se indica con el action)-->
-    <form method = "get" action="procesamiento.php">
+    <!-- el target _blanck: se abre el archivo donde envias los datos en otra ventana
+    -el target self lo abre donde esta
+    -el autocomplete es para que si tiene nuestros datos los ponga por defecto
+    -novalidate: para que te mande los datos sin importar los requisitos
+  -->
+
+    <form method = "get" action="procesamiento.php" target="_blanck" autocomplete>
       <!--boton-->
       <p>
+        <!-- fieldset te mete las cosas en un recuadro y legend crea una leyenda -->
+        <fieldset><legend >Datos personales</legend>
         <!--el label es para enganchar el input a usuario, necesita un id,
       es normal que el id tenga lo mismo que name pero esta vez lo cambio -->
         <label for="idUsuario">
@@ -42,6 +50,7 @@
           Fecha de nacimiento:
         </label>
         <input type = "date" name = "fechaNac" id="idFechaNac"><br/>
+      </fieldset>
       </p>
       <p>Elige tu género:<br/>
         <!--al tener el nombre con la misma variable solo puedo seleccionar 1
@@ -54,6 +63,13 @@
         <label for ="idNoBinario">No binario</label><br/>
       </p>
       <p>
+        <label for="idTexto">añadir comentario</label>
+        <!-- para crear un recuadro donde dejar un comentario por ej.
+            lo normal es no poner ni filas ni columnas y ajustarlo con CSS-->
+        <textarea name="texto" id ="idTexto" rows="10" cols="30"></textarea>
+      </p>
+      <p>
+
         Comida favorita: <br/>
         <input type ="checkbox" name= "comida[]" value="pan" id ="idPan">
         <label for="idPan">Pan</label><br>
@@ -102,10 +118,11 @@
       <p><!--parrafo -->
         <!--tipo boton submit = envio de mensajes de un formulario-->
         <input type="submit" value="click aquí"></input>
-      </p>  
+      </p>
     </form>
   </body>
 </html>
+
 <!-- //el <!DOCTYPE html> para usar el html 5
 //los div dividen en caja
 //metadatos un tipo de datos que definen los caracteres
